@@ -1,0 +1,27 @@
+government_how<- c(203,119,358,613,545,721,32,155,22,511,684,408,229,404,123,575,485,166,231,581,852,171,236,234,131,561,129,377,250,253,446,169,591,373,137,243,197,253,421,100,246,1093,260,102,259,466,629,442,305,377,251,487,886,427,126,411,1412,389,722,1287,529,300,1024,536,461)
+government_when<- c(1946,1947,1947,1948,1950,1951,1953,1953,1954,1954,1955,1957,1958,1959,1960,1960,1962,1963,1963,1964,1966,1968,1968,1969,1970,1970,1972,1972,1973,1974,1974,1976,1976,1978,1979,1979,1980,1980,1981,1982,1982,1983,1986,1987,1987,1988,1989,1991,1992,1993,1994,1995,1996,1998,1999,2000,2001,2005,2006,2008,2011,2013,2014,2016,2018)
+government_who<- c("DeGasperi","DeGasperi","DeGasperi","DeGasperi","DeGasperi","DeGasperi","DeGasperi","Pella","Fanfani","Scelba","Segni","Zoli","Fanfani","Segni","Tambroni","Fanfani","Fanfani","Leone","Moro","Moro","Moro","Leone","Rumor","Rumor","Rumor","Colombo","Andreotti","Leone","Rumor","Rumor","Moro","Moro","Andreotti","Andreotti","Andreotti","Cossiga","Cossiga","Forlani","Spadolini","Spadolini","Fanfani","Craxi","Craxi","Fanfani","Goria","DeMita","Andreotti","Andreotti","Amato","Ciampi","Berlusconi","Dini","Prodi","DAlema","DAlema","Amato","Berlusconi","Berlusconi","Prodi","Berlusconi","Monti","Letta","Renzi","Gentiloni","Conte")
+government <- data.frame(government_when,government_who,government_how)
+
+names(government)[1]<-paste("Year")
+names(government)[2]<-paste("PrimeMinister")
+names(government)[3]<-paste("Duration")
+
+italian_debt_year <- c(2005:2018)
+italian_debt_eur <- c(1512779,1582009,1602115,1666603,1763864,1843015,1897900,1989781,2070228,2137322,2173428,2220370,2269010,2321957)
+italian_debt_gdp <- c(1429479,1485377,1546177,1567761,1519702,1548816,1580220,1613265,1604599,1621827,1652085,1689824,1727382,1756981)
+italian_debt_eur_bln <- c(1513,1582,1602,1667,1764,1843,1898,1990,2070,2137,2173,2220,2269,2322)
+italian_debt_gdp_bln <- c(1429,1485,1546,1568,1520,1549,1580,1613,1605,1622,1652,1690,1727,1757)
+
+italian_debt <- data.frame(italian_debt_year,italian_debt_eur,italian_debt_gdp,italian_debt_eur_bln,italian_debt_gdp_bln)
+
+names(italian_debt)[1]<-paste("Year")
+names(italian_debt)[2]<-paste("DEBT_mln")
+names(italian_debt)[3]<-paste("GDP_mln")
+names(italian_debt)[4]<-paste("DEBT_bln")
+names(italian_debt)[5]<-paste("GDP_bln")
+
+library(readxl)
+EaseDoingBusiness_2013_2018 <- read_excel("<ADD YOUR PATH HERE>/EaseDoingBusiness_2013-2018.xls")
+View(EaseDoingBusiness_2013_2018)
+
